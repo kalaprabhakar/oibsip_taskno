@@ -1,0 +1,7 @@
+package com.kuu.controller;
+
+public interface IReservationController {
+	
+	public boolean login() throws Exception ;
+
+}

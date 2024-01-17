@@ -1,0 +1,37 @@
+package com.kuu.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository("dao")
+public final class ReservationDAOImpl implements IReservationDAO {
+	
+	private static final String SELECT_SQL_QUERY = "SELECT * FROM USER";
+	
+	@Autowired
+	private  DataSource ds;
+
+	@Override
+	public void userLogin() throws Exception {
+		
+		Connection con = ds.getConnection();
+		
+		PreparedStatement ps = con.prepareStatement(SELECT_SQL_QUERY);
+		
+		ResultSet rs = ps.executeQuery();
+		
+		rs.next();
+		
+		String userName = rs.getString(1);
+		String password = rs.getString(2);
+		
+
+	}
+
+}

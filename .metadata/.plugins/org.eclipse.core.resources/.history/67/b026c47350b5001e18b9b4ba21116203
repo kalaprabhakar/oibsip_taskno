@@ -1,0 +1,118 @@
+package com.kuu;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+import javax.swing.text.AbstractDocument.BranchElement;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import com.kuu.model.TrainInfo;
+import com.kuu.model.User;
+import com.kuu.presentation.ReservationUI;
+
+@SpringBootApplication
+public class ReservationSystemApplication {
+	
+	
+
+	public static void main(String[] args) {
+
+		ApplicationContext ctx = SpringApplication.run(ReservationSystemApplication.class, args);
+
+		ReservationUI ui = ctx.getBean("presentation", ReservationUI.class);
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+		
+		System.out.println("Online Reservation System");
+		System.out.println("===============================");
+		
+		System.out.println("Login Deatils");
+		System.out.println("-----------------");
+		System.out.println("enter User Name :");
+		String userName = br.readLine();
+		
+		System.out.println("Enter Password");
+		
+		String password = br.readLine();
+		
+		User user = new User();
+		user.setUserName(userName);
+		user.setPassword(password);
+		
+		boolean flag = ui.login(user);
+		
+		if(flag==true)
+			System.out.println("**********Login Successfull**********");
+		else
+			System.out.println("**********Login Failure**********");
+		
+		while(flag) {
+			
+			
+			
+			System.out.println("Services");
+			System.out.println("=============");
+			
+			System.out.println("1. Booking");
+			System.out.println("2. Cancelation");
+			System.out.println("3. Exit");
+			
+			
+			
+			int option = Integer.parseInt(br.readLine());
+			
+			switch(option) {
+			case 1 :
+				System.out.println("*****Booking Ticket*****");
+				System.out.println("---------------------------");
+				System.out.println("Enter Train Number : ");
+				int trainNo = Integer.parseInt(br.readLine());
+				String trainName = ui.booking(trainNo);
+				System.out.println("Enter Class Type  :: i.1st AC ii. 2nd AC iii. 3rd AC iv. General : ");
+				
+				String type = br.readLine();
+				System.out.println("Enter Date Of Journey (DD/MM/YYYY) : ");
+				String doj = br.readLine();
+				System.out.println("From : ");
+				String from = br.readLine();
+				System.out.println("To :");
+				String to = br.readLine();
+				
+				TrainInfo ti = new TrainInfo();
+				ti.setTrainNo(trainNo);
+				ti.setTraiNname(trainName);
+				ti.setDate(doj);
+				ti.setFrom(from);
+				ti.setTo(to);
+				ti.setType(type);
+				ui.bookingTicket(ti);
+				
+				break;
+				
+			case 2 :
+				
+				System.out.println("Enter Your PNR Number : ");
+				
+				int pnr = Integer.parseInt(br.readLine());
+				
+				ui.cancelTicket(pnr);
+				
+				break ;
+			case 3 :
+				System.exit(0);
+			}
+			
+		}
+		
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

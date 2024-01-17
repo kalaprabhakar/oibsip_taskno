@@ -1,0 +1,12 @@
+package com.kuu.dao;
+
+import java.util.List;
+
+import com.kuu.model.User;
+
+public interface IReservationDAO {
+	
+	public List<String> userLogin(User user) throws Exception;
+	
+
+}

@@ -1,0 +1,5 @@
+package com.kuu.dao;
+
+public interface IReservationDAO {
+
+}

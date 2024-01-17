@@ -1,0 +1,21 @@
+package com.kuu.presentation;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.kuu.controller.IReservationController;
+import com.kuu.model.User;
+
+@Component("presentation")
+public class ReservationUI {
+	
+	@Autowired
+	private IReservationController rescontroller ;
+	
+	public boolean login(User user ) {
+		
+		return rescontroller.login(user);
+		
+	}
+
+}

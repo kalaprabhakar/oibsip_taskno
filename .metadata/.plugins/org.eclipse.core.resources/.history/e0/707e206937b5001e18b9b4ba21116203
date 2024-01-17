@@ -1,0 +1,27 @@
+package com.kuu.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kuu.dao.IReservationDAO;
+
+@Service("servie")
+public class ReservationServiceImpl implements IReservationService {
+	
+	@Autowired
+	private IReservationDAO dao ;
+
+	@Override
+	public boolean checkLoginDetails() throws Exception {
+		
+		List<String> list = new ArrayList<>();
+		
+		list = dao.userLogin();
+		
+		return false;
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.kuu.dao;
+
+public class ReservationDAOImpl implements IReservationDAO {
+
+	@Override
+	public void userLogin() throws Exception {
+		// TODO Auto-generated method stub
+
+	}
+
+}

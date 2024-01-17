@@ -1,0 +1,8 @@
+package com.kuu.dao;
+
+public interface IReservationDAO {
+	
+	public void userLogin() throws Exception;
+	
+
+}

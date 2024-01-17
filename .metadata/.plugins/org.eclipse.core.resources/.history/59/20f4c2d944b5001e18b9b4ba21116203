@@ -1,0 +1,15 @@
+package com.kuu.model;
+
+public class TrainInfo {
+	
+	private int trainNo;
+	private String traiNname;
+	private String pnr ;
+	private String type ;
+	private  String date;
+	private  String from ;
+	private String to ; 
+	
+	
+
+}

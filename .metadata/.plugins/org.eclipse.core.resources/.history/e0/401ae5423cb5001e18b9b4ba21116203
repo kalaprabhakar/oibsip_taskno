@@ -1,0 +1,56 @@
+package com.kuu;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+import javax.swing.text.AbstractDocument.BranchElement;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import com.kuu.model.User;
+import com.kuu.presentation.ReservationUI;
+
+@SpringBootApplication
+public class ReservationSystemApplication {
+	
+	
+
+	public static void main(String[] args) {
+
+		ApplicationContext ctx = SpringApplication.run(ReservationSystemApplication.class, args);
+
+		ReservationUI ui = ctx.getBean("presentation", ReservationUI.class);
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		try {
+		
+		System.out.println("Online Reservation System");
+		System.out.println("===============================");
+		
+		System.out.println("Login Deatils");
+		System.out.println("-----------------");
+		System.out.println("enter User Name :");
+		String userName = br.readLine();
+		
+		System.out.println("Enter Password");
+		
+		String password = br.readLine();
+		
+		User user = new User();
+		user.setUserName(userName);
+		user.setPassword(password);
+		
+		while(true) {
+			
+		}
+		
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

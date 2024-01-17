@@ -1,0 +1,11 @@
+package com.kuu.service;
+
+public class ReservationServiceImpl implements IReservationService {
+
+	@Override
+	public boolean checkLoginDetails() throws Exception {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

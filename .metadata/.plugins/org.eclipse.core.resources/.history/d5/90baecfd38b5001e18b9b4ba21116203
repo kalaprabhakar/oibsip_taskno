@@ -1,0 +1,11 @@
+package com.kuu.controller;
+
+public class ReservationControllerImpl implements IReservationController {
+
+	@Override
+	public boolean login() throws Exception {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

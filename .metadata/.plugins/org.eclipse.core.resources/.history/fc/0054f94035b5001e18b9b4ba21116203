@@ -1,0 +1,5 @@
+package com.kuu.service;
+
+public interface IReservationService {
+
+}

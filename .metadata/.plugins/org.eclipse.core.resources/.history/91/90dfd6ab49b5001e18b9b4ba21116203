@@ -1,0 +1,13 @@
+package com.kuu.service;
+
+import com.kuu.model.TrainInfo;
+import com.kuu.model.User;
+
+public interface IReservationService {
+
+	public boolean checkLoginDetails(User user) throws Exception ;
+	
+	public String fetchTrain(int trainNo) throws Exception ;
+	
+	public boolean insertTicket(TrainInfo info) throws Exception ;
+}

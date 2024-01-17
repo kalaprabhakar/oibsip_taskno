@@ -1,0 +1,6 @@
+package com.kuu.service;
+
+public interface IReservationService {
+
+	public boolean checkLoginDetails() throws Exception ;
+}

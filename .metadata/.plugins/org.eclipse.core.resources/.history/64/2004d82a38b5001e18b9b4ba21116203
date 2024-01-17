@@ -1,0 +1,22 @@
+package com.kuu.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+
+import com.kuu.service.IReservationService;
+
+@Controller("controller")
+public class MainController {
+	
+	@Autowired
+	private IReservationService service ;
+	
+	public boolean login()throws Exception {
+		
+		return service.checkLoginDetails();
+		
+		
+	}
+
+}

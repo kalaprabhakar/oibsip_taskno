@@ -1,0 +1,11 @@
+package com.kuu.controller;
+
+import com.kuu.model.User;
+
+public interface IReservationController {
+	
+	public boolean login(User user) throws Exception ;
+	
+	public void retriveTain(int trainNo) throws Exception ;
+
+}

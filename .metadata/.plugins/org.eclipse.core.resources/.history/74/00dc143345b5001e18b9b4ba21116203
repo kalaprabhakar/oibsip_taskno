@@ -1,0 +1,10 @@
+package com.kuu.service;
+
+import com.kuu.model.User;
+
+public interface IReservationService {
+
+	public boolean checkLoginDetails(User user) throws Exception ;
+	
+	public void fetchTrain(int trainNo) throws Exception ;
+}
